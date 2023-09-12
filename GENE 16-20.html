@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LIC LABA 16-20</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  <link rel="stylesheet" href="/style1.css">
+</head>
+<body>
+  <canvas id="incomeChart"></canvas>
+
+  <script>
+    // Datos de ejemplo para la gráfica
+    var months = ["Egresados", "Títulos elaborados", "Títulos entregados", "Títulos en tramite", "Pendientes"];
+    var incomes = [13.00, 13.00, 12, 0];
+
+    // Obtener el contexto del lienzo (canvas)
+    var ctx = document.getElementById('incomeChart').getContext('2d');
+
+    // Crear la gráfica
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Generación 2016-2020',
+          data: incomes,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
